@@ -12,7 +12,7 @@ import { HotkeysProvider } from "react-hotkeys-hook";
 import { FOCUS_PROMPT_EVENT } from "./events";
 import { useLocale } from "@/app/context/LocaleContext";
 
-// TldrawLocaleSync removed because it's unused.
+import { TldrawLocaleSync } from "./components/TldrawLocaleSync";
 
 const components: Partial<TLUiComponents> = {
   Toolbar: () => {
@@ -113,6 +113,7 @@ const Page = () => {
               }}
               persistenceKey="c1-canvas"
             >
+              <TldrawLocaleSync />
               <PromptInput focusEventName={FOCUS_PROMPT_EVENT} />
               <C1SelectionUI />
             </Tldraw>
