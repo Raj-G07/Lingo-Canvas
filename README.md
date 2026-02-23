@@ -71,7 +71,7 @@ Unlike traditional apps that translate static text, **Lingo Canvas** leverages A
 
 1.  **Clone the repository**:
     ```bash
-    
+    git clone https://github.com/Raj-G07/Lingo-Canvas.git
     ```
 
 2.  **Install dependencies**:
@@ -88,6 +88,10 @@ Unlike traditional apps that translate static text, **Lingo Canvas** leverages A
     # OR
     GOOGLE_GEMINI_API_KEY=your_gemini_api_key
     ```
+    
+### Screenshots
+
+<img width="1318" height="635" alt="Screenshot 2026-02-23 133917" src="https://github.com/user-attachments/assets/eaede7c6-59f5-4dcf-84ab-ca6fec9f1632" />
 
 ### Development
 
@@ -107,13 +111,3 @@ Open [http://localhost:3000](http://localhost:3000) to see the app.
 ## Customization
 
 System behavior is defined in `src/app/api/ask/systemPrompt.ts`. You can modify this to change how the AI structure its responses, such as encouraging more visual components or specific data formatting styles.
-
-## License
-
-This project is licensed under the MIT License.
-
-## Acknowledgments
-
--   [Thesys](https://www.thesys.dev/) for the GenUI power.
--   [Lingo.dev](https://lingo.dev/) for the localization engine.
--   [tldraw](https://tldraw.dev/) for the infinite canvas library.
