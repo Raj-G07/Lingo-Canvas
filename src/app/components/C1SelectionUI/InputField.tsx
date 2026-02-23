@@ -2,6 +2,7 @@ import { IconButton } from "@crayonai/react-ui";
 import clsx from "clsx";
 import { ArrowUp, X } from "lucide-react";
 import { useState } from "react";
+import { useLocale } from "@/app/context/LocaleContext";
 
 interface InputFieldProps {
   x: number;
@@ -11,6 +12,7 @@ interface InputFieldProps {
 }
 
 export const InputField = ({ x, y, onSubmit, onCancel }: InputFieldProps) => {
+  const { t } = useLocale();
   const [value, setValue] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -48,7 +50,7 @@ export const InputField = ({ x, y, onSubmit, onCancel }: InputFieldProps) => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Enter prompt..."
+          placeholder={t("component.inputPlaceholder")}
           autoFocus
           className="flex-1"
         />
@@ -58,6 +60,7 @@ export const InputField = ({ x, y, onSubmit, onCancel }: InputFieldProps) => {
           size="medium"
           type="submit"
           disabled={!value.trim()}
+          title={t("button.submit")}
           onMouseDown={(e) => {
             // Prevent the input from losing focus when clicking the submit button
             e.preventDefault();
@@ -69,6 +72,7 @@ export const InputField = ({ x, y, onSubmit, onCancel }: InputFieldProps) => {
           size="medium"
           type="button"
           onClick={onCancel}
+          title={t("button.cancel")}
           onMouseDown={(e) => {
             // Prevent the input from losing focus when clicking the cancel button
             e.preventDefault();

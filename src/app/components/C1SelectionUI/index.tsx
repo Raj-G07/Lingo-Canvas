@@ -8,9 +8,11 @@ import { createArrowBetweenShapes } from "@/app/utils/connection";
 import { createShapeId } from "tldraw";
 import { extractC1ShapeContext } from "@/app/utils/shapeContext";
 import { makeApiCall } from "@/app/helpers/api";
+import { useLocale } from "@/app/context/LocaleContext";
 
 export const C1SelectionUI = track(() => {
   const editor = useEditor();
+  const { locale, t } = useLocale();
   const [selectedC1Shape, setSelectedC1Shape] =
     useState<C1ComponentShape | null>(null);
   const [showInputField, setShowInputField] = useState(false);
@@ -121,6 +123,7 @@ export const C1SelectionUI = track(() => {
       await makeApiCall({
         searchQuery: prompt,
         additionalContext,
+        locale,
         onResponseStreamStart: () => {
           createArrowBetweenShapes(editor, originShapeId, shapeId);
 
@@ -196,7 +199,7 @@ export const C1SelectionUI = track(() => {
           <button
             onClick={handlePlusButtonClick}
             className="w-6 h-6 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            title="Add connected component"
+            title={t("component.addConnectedTooltip")}
           >
             <span className="text-xs font-bold leading-none">+</span>
           </button>

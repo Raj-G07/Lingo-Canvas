@@ -11,15 +11,18 @@ import {
     Users,
     DollarSign
 } from 'lucide-react';
+import { useLocale } from '@/app/context/LocaleContext';
 
 export default function VisualCardsDemo() {
+    const { t } = useLocale();
+
     return (
         <div className="p-8 bg-background-fill min-h-screen space-y-12">
             <section>
-                <h2 className="text-2xl font-bold mb-6 text-primary-text">Business Metrics</h2>
+                <h2 className="text-2xl font-bold mb-6 text-primary-text">{t('card.section.metrics')}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <MetricCard
-                        title="Total Revenue"
+                        title={t('card.metric.revenue')}
                         value="$128,430"
                         change="+12.5%"
                         isPositive={true}
@@ -28,7 +31,7 @@ export default function VisualCardsDemo() {
                         primaryColor="#7F56D9"
                     />
                     <MetricCard
-                        title="Active Users"
+                        title={t('card.metric.users')}
                         value="12,450"
                         change="+5.2%"
                         isPositive={true}
@@ -37,7 +40,7 @@ export default function VisualCardsDemo() {
                         primaryColor="#0BA57D"
                     />
                     <MetricCard
-                        title="Churn Rate"
+                        title={t('card.metric.churn')}
                         value="2.4%"
                         change="-0.8%"
                         isPositive={false}
@@ -49,20 +52,20 @@ export default function VisualCardsDemo() {
             </section>
 
             <section>
-                <h2 className="text-2xl font-bold mb-6 text-primary-text">Plan Comparison</h2>
+                <h2 className="text-2xl font-bold mb-6 text-primary-text">{t('card.section.comparison')}</h2>
                 <ComparisonCard
                     primaryColor="#7F56D9"
                     items={[
                         {
-                            title: "Starter",
+                            title: "demo.comparison.starter.title",
                             price: "Free",
-                            features: ["1 Project", "Basic Analytics", "Community Support", "Subdomains"],
+                            features: ["demo.comparison.starter.feature1", "demo.comparison.starter.feature2", "demo.comparison.starter.feature3", "demo.comparison.starter.feature4"],
                             image: "https://loremflickr.com/400/400/startup?lock=1"
                         },
                         {
-                            title: "Professional",
+                            title: "demo.comparison.pro.title",
                             price: "$49",
-                            features: ["Unlimited Projects", "Advanced Analytics", "Priority Support", "Custom Domains"],
+                            features: ["demo.comparison.pro.feature1", "demo.comparison.pro.feature2", "demo.comparison.pro.feature3", "demo.comparison.pro.feature4"],
                             isPopular: true,
                             image: "https://loremflickr.com/400/400/business?lock=2"
                         }
@@ -71,41 +74,41 @@ export default function VisualCardsDemo() {
             </section>
 
             <section>
-                <h2 className="text-2xl font-bold mb-6 text-primary-text">Team Performance</h2>
+                <h2 className="text-2xl font-bold mb-6 text-primary-text">{t('card.section.team')}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <ProfileCard
-                        name="Alex Rivera"
-                        role="Design Director"
+                        name="demo.profile.alex.name"
+                        role="demo.profile.alex.role"
                         status="online"
                         avatar="https://loremflickr.com/200/200/face,man?lock=3"
                         stats={[
-                            { label: "Projects", value: "12" },
-                            { label: "Rating", value: "4.9" },
-                            { label: "Active", value: "Yes" }
+                            { label: "demo.profile.stat.projects", value: "12" },
+                            { label: "demo.profile.stat.rating", value: "4.9" },
+                            { label: "demo.profile.stat.active", value: "Yes" }
                         ]}
                         primaryColor="#7F56D9"
                     />
                     <ProfileCard
-                        name="Sarah Chen"
-                        role="Lead Developer"
+                        name="demo.profile.sarah.name"
+                        role="demo.profile.sarah.role"
                         status="busy"
                         avatar="https://loremflickr.com/200/200/face,woman?lock=4"
                         stats={[
-                            { label: "Commits", value: "324" },
-                            { label: "Reviews", value: "45" },
-                            { label: "Tasks", value: "8" }
+                            { label: "demo.profile.stat.commits", value: "324" },
+                            { label: "demo.profile.stat.reviews", value: "45" },
+                            { label: "demo.profile.stat.tasks", value: "8" }
                         ]}
                         primaryColor="#0BA57D"
                     />
                     <ProfileCard
-                        name="Marcus Volt"
-                        role="Product Manager"
+                        name="demo.profile.marcus.name"
+                        role="demo.profile.marcus.role"
                         status="offline"
                         avatar="https://loremflickr.com/200/200/face,manager?lock=5"
                         stats={[
-                            { label: "Sprints", value: "24" },
-                            { label: "Success", value: "98%" },
-                            { label: "Impact", value: "High" }
+                            { label: "demo.profile.stat.sprints", value: "24" },
+                            { label: "demo.profile.stat.success", value: "98%" },
+                            { label: "demo.profile.stat.impact", value: "High" }
                         ]}
                         primaryColor="#F79009"
                     />

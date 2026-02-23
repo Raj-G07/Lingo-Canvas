@@ -64,15 +64,15 @@ export function getAnalyticsTool(writeThinkItem?: ThinkingStateCallback): Runnab
 
         // Mocking sophisticated analytics data
         return {
-          title: `${topic.charAt(0).toUpperCase() + topic.slice(1)} Performance`,
+          title: `analytics.${topic}.title`,
           value: topic === 'sales' ? "$124.5k" : topic === 'users' ? "12,450" : "85%",
           change: "+12.5%",
           isPositive: true,
           trend: Array.from({ length: 12 }, () => Math.floor(Math.random() * 60) + 40),
           breakdown: [
-            { label: "Growth", value: "High" },
-            { label: "Sentiment", value: "Positive" },
-            { label: "Retention", value: "92%" }
+            { label: "analytics.breakdown.growth", value: "analytics.breakdown.value.high" },
+            { label: "analytics.breakdown.sentiment", value: "analytics.breakdown.value.positive" },
+            { label: "analytics.breakdown.retention", value: "92%" }
           ]
         };
       },
@@ -100,13 +100,13 @@ export function getComparisonTool(writeThinkItem?: ThinkingStateCallback): Runna
 
         return {
           items: options.map((opt, i) => ({
-            title: opt,
-            price: i === 0 ? "Free" : `$${(i + 1) * 29}`,
+            title: `comparison.option.${opt.toLowerCase().replace(/\s+/g, '_')}`,
+            price: i === 0 ? "comparison.price.free" : `$${(i + 1) * 29}`,
             features: [
-              "Standard Support",
-              "Unlimited Projects",
-              i > 0 ? "Advanced Analytics" : "Basic Analytics",
-              i > 1 ? "Custom Domains" : "Subdomains only"
+              "comparison.feature.standardSupport",
+              "comparison.feature.unlimitedProjects",
+              i > 0 ? "comparison.feature.advancedAnalytics" : "comparison.feature.basicAnalytics",
+              i > 1 ? "comparison.feature.customDomains" : "comparison.feature.subdomainsOnly"
             ],
             isPopular: i === 1,
             image: `https://images.unsplash.com/photo-${1542273917363 + i}-3b1817f69a2d?q=80&w=400`
@@ -120,6 +120,7 @@ export function getComparisonTool(writeThinkItem?: ThinkingStateCallback): Runna
 
 export const tools = (writeThinkItem?: ThinkingStateCallback): (
   | RunnableToolFunctionWithoutParse
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   | RunnableToolFunctionWithParse<any>
 )[] => [
     getImageSearchTool(writeThinkItem),

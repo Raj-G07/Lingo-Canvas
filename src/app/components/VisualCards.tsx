@@ -1,16 +1,13 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
+import { useLocale } from '@/app/context/LocaleContext';
 import {
-    TrendingUp,
-    Users,
-    DollarSign,
     ArrowUpRight,
     ArrowDownRight,
     MoreHorizontal,
     CheckCircle2,
-    Clock,
-    ShieldCheck,
     Zap,
     Star
 } from 'lucide-react';
@@ -54,6 +51,7 @@ export interface ProfileCardProps {
  * Metric Card with Sparkline and Trend
  */
 export const MetricCard: React.FC<MetricCardProps> = ({ title, value, change, isPositive, icon, trend, primaryColor }) => {
+    const { t } = useLocale();
     const colorClass = primaryColor || 'var(--secondary-violet-text)';
 
     return (
@@ -70,7 +68,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({ title, value, change, is
                 </button>
             </div>
             <div>
-                <p className="text-sm font-medium text-secondary-text mb-1 uppercase tracking-wider">{title}</p>
+                <p className="text-sm font-medium text-secondary-text mb-1 uppercase tracking-wider">{t(title)}</p>
                 <div className="flex items-baseline gap-2">
                     <h3 className="text-3xl font-bold text-primary-text">{value}</h3>
                     <span className={clsx(
@@ -105,6 +103,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({ title, value, change, is
  * Comparison Card for Pricing or Plans
  */
 export const ComparisonCard: React.FC<ComparisonCardProps> = ({ items, primaryColor }) => {
+    const { t } = useLocale();
     const colorClass = primaryColor || 'var(--ai-accent-fill)';
 
     return (
@@ -122,25 +121,25 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({ items, primaryCo
                             className="absolute top-0 right-8 -translate-y-1/2 text-brand-text text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest flex items-center gap-1"
                             style={{ backgroundColor: colorClass }}
                         >
-                            <Star className="w-3 h-3 fill-current" /> Most Popular
+                            <Star className="w-3 h-3 fill-current" /> {t("comparison.most_popular")}
                         </div>
                     )}
 
-                    <div className="mb-6 overflow-hidden rounded-2xl h-32 w-full">
-                        <img src={item.image} alt={item.title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700" />
+                    <div className="mb-6 overflow-hidden rounded-2xl h-32 w-full relative">
+                        <Image src={item.image} fill alt={t(item.title)} className="object-cover transform hover:scale-110 transition-transform duration-700" />
                     </div>
 
-                    <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                    <h4 className="text-xl font-bold mb-2">{t(item.title)}</h4>
                     <div className="flex items-baseline gap-1 mb-6">
                         <span className="text-4xl font-extrabold">{item.price}</span>
-                        <span className={item.isPopular ? "text-brand-text/60" : "text-secondary-text"}>/per month</span>
+                        <span className={item.isPopular ? "text-brand-text/60" : "text-secondary-text"}>/{t("comparison.per_month")}</span>
                     </div>
 
                     <ul className="space-y-4 mb-8 flex-grow">
                         {item.features.map((feature, fidx) => (
                             <li key={fidx} className="flex items-center gap-3">
                                 <CheckCircle2 className="w-5 h-5" style={{ color: item.isPopular ? 'var(--success-text)' : colorClass }} />
-                                <span className="text-sm">{feature}</span>
+                                <span className="text-sm">{t(feature)}</span>
                             </li>
                         ))}
                     </ul>
@@ -154,7 +153,7 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({ items, primaryCo
                         )}
                         style={!item.isPopular ? { backgroundColor: colorClass } : {}}
                     >
-                        Get Started
+                        {t("comparison.get_started")}
                     </button>
                 </div>
             ))}
@@ -166,6 +165,7 @@ export const ComparisonCard: React.FC<ComparisonCardProps> = ({ items, primaryCo
  * Modern User Profile Card
  */
 export const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, status, avatar, stats, primaryColor }) => {
+    const { t } = useLocale();
     const colorClass = primaryColor || 'var(--secondary-violet-text)';
 
     return (
@@ -175,11 +175,12 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, status, av
                 style={{ background: `linear-gradient(to right, ${colorClass}, var(--ai-accent-fill))` }}
             >
                 <div className="absolute -bottom-10 left-6">
-                    <div className="relative">
-                        <img
+                    <div className="relative w-20 h-20">
+                        <Image
                             src={avatar}
-                            alt={name}
-                            className="w-20 h-20 rounded-2xl border-4 border-container object-cover shadow-md group-hover:rotate-3 transition-transform duration-300"
+                            fill
+                            alt={t(name)}
+                            className="rounded-2xl border-4 border-container object-cover shadow-md group-hover:rotate-3 transition-transform duration-300"
                         />
                         <div className={clsx(
                             "absolute bottom-1 right-1 w-4 h-4 rounded-full border-2 border-container",
@@ -192,8 +193,8 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, status, av
             <div className="pt-12 p-6">
                 <div className="flex justify-between items-start mb-6">
                     <div>
-                        <h4 className="text-xl font-bold text-primary-text">{name}</h4>
-                        <p className="text-sm text-secondary-text">{role}</p>
+                        <h4 className="text-xl font-bold text-primary-text">{t(name)}</h4>
+                        <p className="text-sm text-secondary-text">{t(role)}</p>
                     </div>
                     <div className="flex gap-2">
                         <button className="p-2 border-default border rounded-lg hover:bg-sunk-fill transition-colors">
@@ -205,7 +206,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, status, av
                 <div className="grid grid-cols-3 gap-4 border-t border-default pt-6">
                     {stats.map((stat, i) => (
                         <div key={i} className="text-center">
-                            <span className="block text-xs text-secondary-text uppercase mb-1">{stat.label}</span>
+                            <span className="block text-xs text-secondary-text uppercase mb-1">{t(stat.label)}</span>
                             <span className="block text-base font-bold text-primary-text">{stat.value}</span>
                         </div>
                     ))}

@@ -1,0 +1,94 @@
+{
+  "toolbar": {
+    "undo": "Rückgängig",
+    "redo": "Wiederholen",
+    "export": "Exportieren",
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "selectAll": "Alles auswählen",
+    "delete": "Löschen"
+  },
+  "language": {
+    "selector": {
+      "label": "Sprache"
+    },
+    "en": "Englisch",
+    "de": "Deutsch",
+    "ar": "Arabisch",
+    "ur": "Urdu"
+  },
+  "empty": {
+    "canvas": "Ihr Canvas ist leer. Geben Sie unten eine Eingabeaufforderung ein.",
+    "results": "Keine Ergebnisse gefunden.",
+    "components": "Noch keine Komponenten vorhanden."
+  },
+  "loading": {
+    "generating": "Wird generiert…",
+    "translating": "Wird übersetzt…",
+    "saving": "Wird gespeichert…",
+    "connecting": "Verbindung wird hergestellt…"
+  },
+  "error": {
+    "network": "Netzwerkfehler. Bitte versuchen Sie es erneut.",
+    "generation": "Generierung fehlgeschlagen. Bitte erneut versuchen.",
+    "unknown": "Ein unerwarteter Fehler ist aufgetreten.",
+    "timeout": "Anfrage abgelaufen. Bitte erneut versuchen."
+  },
+  "modal": {
+    "confirmDelete": {
+      "title": "Komponente löschen",
+      "body": "Möchten Sie diese Komponente wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+    },
+    "settings": {
+      "title": "Einstellungen"
+    }
+  },
+  "button": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "submit": "Absenden",
+    "addComponent": "Komponente hinzufügen",
+    "retry": "Erneut versuchen",
+    "close": "Schließen",
+    "confirm": "Bestätigen"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "theme": "Design",
+    "language": "Sprache",
+    "darkMode": "Dunkelmodus",
+    "lightMode": "Hellmodus",
+    "systemMode": "Systemstandard"
+  },
+  "prompt": {
+    "placeholder": "Stellen Sie eine Frage…",
+    "shortcut": {
+      "mac": "⌘ + K",
+      "win": "Strg + K"
+    },
+    "submit": "Eingabeaufforderung absenden"
+  },
+  "app": {
+    "title": "Lingo Canvas",
+    "tagline": "Mehrsprachiges UI-Canvas"
+  },
+  "nav": {
+    "canvas": "Leinwand",
+    "history": "Verlauf",
+    "settings": "Einstellungen"
+  },
+  "notification": {
+    "saved": "Erfolgreich gespeichert.",
+    "deleted": "Komponente gelöscht.",
+    "copied": "In die Zwischenablage kopiert.",
+    "error": "Etwas ist schiefgelaufen."
+  },
+  "component": {
+    "addConnected": "Verknüpfte Komponente hinzufügen",
+    "addConnectedTooltip": "Ein verbundenes KI-Element zu dieser Form hinzufügen",
+    "generating": "Komponente wird generiert…",
+    "empty": "Diese Komponente ist leer.",
+    "inputPlaceholder": "Prompt eingeben…"
+  }
+}

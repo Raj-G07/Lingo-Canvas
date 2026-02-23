@@ -9,8 +9,15 @@ interface PromptInputProps {
   focusEventName: string;
 }
 
+import { useLocale } from "@/app/context/LocaleContext";
+
+interface PromptInputProps {
+  focusEventName: string;
+}
+
 export const PromptInput = track(({ focusEventName }: PromptInputProps) => {
   const editor = useEditor();
+  const { locale, t } = useLocale();
   const isDarkMode = editor.user.getIsDarkMode();
   // Ensure we always have a valid theme mode for ThemeProvider
   const themeMode = isDarkMode === true ? "dark" : "light";
@@ -44,6 +51,7 @@ export const PromptInput = track(({ focusEventName }: PromptInputProps) => {
         height: 300,
         centerCamera: true,
         animationDuration: 200,
+        locale, // Pass current locale to the shape creation helper
       });
     } catch (error) {
       console.error("Failed to create C1 component shape:", error);
@@ -74,7 +82,7 @@ export const PromptInput = track(({ focusEventName }: PromptInputProps) => {
           name="prompt-input"
           ref={inputRef}
           type="text"
-          placeholder="Ask anything..."
+          placeholder={t("prompt.placeholder")}
           className="flex-1"
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
@@ -88,6 +96,7 @@ export const PromptInput = track(({ focusEventName }: PromptInputProps) => {
             icon={<ArrowUp />}
             size="medium"
             type="submit"
+            title={t("prompt.submit")}
             onMouseDown={(e) => {
               // Prevent the input from losing focus when clicking the submit button
               e.preventDefault();
@@ -95,7 +104,7 @@ export const PromptInput = track(({ focusEventName }: PromptInputProps) => {
           />
         ) : (
           <span className="text-xs opacity-30">
-            {showMacKeybinds ? "⌘ + K" : "Ctrl + K"}
+            {showMacKeybinds ? t("prompt.shortcut.mac") : t("prompt.shortcut.win")}
           </span>
         )}
       </ThemeProvider>

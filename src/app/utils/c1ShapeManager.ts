@@ -18,6 +18,8 @@ export interface C1ShapeCreationOptions {
   centerCamera?: boolean;
   /** Animation duration for camera centering (default: 200ms) */
   animationDuration?: number;
+  /** Current locale for the shape (default: 'en') */
+  locale?: string;
 }
 
 /**
@@ -34,6 +36,7 @@ export async function createC1ComponentShape(
     height = 300,
     centerCamera = true,
     animationDuration = 200,
+    locale = "en",
   } = options;
 
   // Generate unique shape ID
@@ -71,6 +74,7 @@ export async function createC1ComponentShape(
   await makeApiCall({
     searchQuery,
     additionalContext,
+    locale,
     onResponseStreamStart: () => {
       editor.updateShape({
         id: shapeId,

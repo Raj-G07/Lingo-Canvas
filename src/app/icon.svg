@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Red part (bottom right wing) -->
+  <path d="M472 80L135 250L400 450Z" fill="#F43F5E" />
+  <!-- Yellow part (top wing) -->
+  <path d="M472 80L80 160L135 250Z" fill="#FACC15" />
+  <!-- Blue part (left body fold) -->
+  <path d="M135 250L80 160L100 370Z" fill="#38BDF8" />
+  <!-- Darker blue/shadow part for 3D effect -->
+  <path d="M135 250L100 370L400 450Z" fill="#0EA5E9" />
+</svg>

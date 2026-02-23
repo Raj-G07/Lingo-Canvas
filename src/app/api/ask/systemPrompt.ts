@@ -29,4 +29,13 @@ export const SYSTEM_PROMPT = `
     - Ensure fonts are modern (Inter, Outfit).
     - Use 'lucide-react' icons where appropriate.
   </formatting>
+
+  <localization>
+    - The UI supports multiple languages via a runtime translation layer. 
+    - Output natural, concise English UI text directly for all string values.
+    - Do NOT output dot-notation keys.
+    - Do NOT output localization identifiers.
+    - Generate real UI copy.
+    - Numeric values, percentages, and currency amounts (e.g., "$128k", "+12.5%") should be passed as raw values — do NOT translate these.
+  </localization>
 `;

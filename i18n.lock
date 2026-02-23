@@ -1,0 +1,47 @@
+version: 1
+checksums:
+  cd45f366fd2727f232266877d34abf6c:
+    app.prompt.placeholder: 286c732251b698d25c6ddac7c4e12a62
+    app.prompt.shortcut.mac: 49b747bba17f9e26b9d31284d7fcfe46
+    app.prompt.shortcut.win: 74392e74c2fa5f2e3228f1775b68d4ed
+    card.section.metrics: ac9d5e145caede1fa7a49be9faeb755f
+    card.section.comparison: b3bdbf8d3e2326b6bb1045217c46916a
+    card.section.team: a5b9ef2aff0ac4e89b90c1b25c2f01cd
+    card.metric.revenue: de2f7a9155ab8c2938ddaf03b2fb7854
+    card.metric.users: 561a1f7ef3881ed535efdf1609868f93
+    card.metric.churn: fa256c53ebd06019ae401f90bcec5a0b
+    card.price.perMonth: 31516245d6766432148edb1abb61849d
+    card.popular.badge: 794d089f06d8ac43ef688cc6f4543418
+    card.button.getStarted: 1d5f030c4ec9c869e647ae060518b948
+    lang.ja: 577fd83e8e392bc3b56df14d10463fff
+    lang.switcher.label: 277fd1a41cc237a437cd1d5e4a80463b
+    auth.login.title: aa2074a1281d5fd4857ef493aae5c8a6
+    auth.email.label: 0ee22bbbe989a0c61a18023407d12dc2
+    auth.password.label: 223a61cf906ab9c40d22612c588dff48
+    auth.forgotPassword.link: 87302ecbbfead42d1abecddd442ad77b
+    auth.button.submit: ec7b8f314fe9bc6591006707484ede61
+    auth.signup.prompt: db43c54eb2818d4416857bdcf852c04f
+    metric.revenue.title: de2f7a9155ab8c2938ddaf03b2fb7854
+    metric.users.title: 561a1f7ef3881ed535efdf1609868f93
+    metric.churn.title: fa256c53ebd06019ae401f90bcec5a0b
+    analytics.sales.title: 3463a2157e85bec2999da716ad1ee972
+    analytics.users.title: 13fe225a07745c5bf3e3156326046288
+    analytics.performance.title: 38ed4683844cb1a682c41d6c7b00a195
+    analytics.breakdown.growth: 0925878a59568382e76cd9ca3cc52ef6
+    analytics.breakdown.sentiment: 9ba5719c80c0136c2d0644217619aff6
+    analytics.breakdown.retention: 61888036df620d1d8297f02c2d3d312f
+    analytics.breakdown.value.high: dabe777f3b670e9407e46c186197d188
+    analytics.breakdown.value.positive: c0c37bed1a06b7e8cdc72607e56487de
+    comparison.option.basic: e3419625edbe29b8528d564c90a5e70c
+    comparison.option.pro: 682b3c9feab30112b4454cb5bb7974b1
+    comparison.option.enterprise: c70474271708e5b27392fde87462fa26
+    comparison.price.free: 0326365539c004f6088656f692602078
+    comparison.feature.standardSupport: 96a3213d4c2c3a56aea3706321ac7811
+    comparison.feature.unlimitedProjects: 830c43605aa450f5a412a8248830d95b
+    comparison.feature.advancedAnalytics: 966f8f30c70d90026d5e127b276f8886
+    comparison.feature.basicAnalytics: ed307cfc52d862dc4253ec59221df5c0
+    comparison.feature.customDomains: c926a49f7a78679096f2728a8e84aa0c
+    comparison.feature.subdomainsOnly: d0b0419834af35aa16b71cf51f07149e
+    comparison.most_popular: 794d089f06d8ac43ef688cc6f4543418
+    comparison.per_month: bcfdb0355d8edb56d4fa88350c29208d
+    comparison.get_started: 1d5f030c4ec9c869e647ae060518b948

@@ -1,0 +1,94 @@
+{
+  "toolbar": {
+    "undo": "Undo",
+    "redo": "Redo",
+    "export": "Export",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "selectAll": "Select All",
+    "delete": "Delete"
+  },
+  "language": {
+    "selector": {
+      "label": "Language"
+    },
+    "en": "English",
+    "de": "German",
+    "ar": "Arabic",
+    "ur": "Urdu"
+  },
+  "empty": {
+    "canvas": "Your canvas is empty. Type a prompt below to get started.",
+    "results": "No results found.",
+    "components": "No components yet."
+  },
+  "loading": {
+    "generating": "Generating…",
+    "translating": "Translating…",
+    "saving": "Saving…",
+    "connecting": "Connecting…"
+  },
+  "error": {
+    "network": "Network error. Please try again.",
+    "generation": "Generation failed. Please retry.",
+    "unknown": "An unexpected error occurred.",
+    "timeout": "Request timed out. Please try again."
+  },
+  "modal": {
+    "confirmDelete": {
+      "title": "Delete Component",
+      "body": "Are you sure you want to delete this component? This cannot be undone."
+    },
+    "settings": {
+      "title": "Settings"
+    }
+  },
+  "button": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "submit": "Submit",
+    "addComponent": "Add Component",
+    "retry": "Retry",
+    "close": "Close",
+    "confirm": "Confirm"
+  },
+  "settings": {
+    "title": "Settings",
+    "theme": "Theme",
+    "language": "Language",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "systemMode": "System Default"
+  },
+  "prompt": {
+    "placeholder": "Ask anything…",
+    "shortcut": {
+      "mac": "⌘ + K",
+      "win": "Ctrl + K"
+    },
+    "submit": "Submit prompt"
+  },
+  "app": {
+    "title": "Lingo Canvas",
+    "tagline": "Multilingual UI Canvas"
+  },
+  "nav": {
+    "canvas": "Canvas",
+    "history": "History",
+    "settings": "Settings"
+  },
+  "notification": {
+    "saved": "Saved successfully.",
+    "deleted": "Component deleted.",
+    "copied": "Copied to clipboard.",
+    "error": "Something went wrong."
+  },
+  "component": {
+    "addConnected": "Add connected component",
+    "addConnectedTooltip": "Add a connected AI component to this shape",
+    "generating": "Generating component…",
+    "empty": "This component is empty.",
+    "inputPlaceholder": "Enter prompt…"
+  }
+}

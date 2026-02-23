@@ -12,10 +12,11 @@ const client = new OpenAI({
 });
 
 export async function POST(req: NextRequest) {
-  const { prompt, previousC1Response, context } = (await req.json()) as {
+  const { prompt, previousC1Response, context, locale } = (await req.json()) as {
     prompt: string;
     previousC1Response?: string;
     context?: string;
+    locale?: string;
   };
 
   const c1Response = makeC1Response();
@@ -36,11 +37,17 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  if (context) {
-    const message = `{prompt: ${prompt}, context: ${context}}`;
+  if (context || locale) {
+    const message = JSON.stringify({
+      prompt,
+      context,
+      requestedLocale: locale || "en"
+    });
     messages.push({
       role: "user",
-      content: message,
+      content: `The user wants to generate content in the following locale: ${locale || "en"}. 
+      Prompt details: ${message}. 
+      ALWAYS respond in the requested locale and structure your GenUI components accordingly.`,
     });
   } else {
     messages.push({

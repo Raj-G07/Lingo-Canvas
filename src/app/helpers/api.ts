@@ -15,6 +15,8 @@ export type ApiCallParams = {
   onResponseStreamEnd?: () => void;
   /** Additional context to send with the request */
   additionalContext?: string;
+  /** Current locale for the response */
+  locale?: string;
 };
 
 /**
@@ -30,6 +32,7 @@ export const makeApiCall = async ({
   onResponseStreamStart,
   onResponseStreamEnd,
   additionalContext,
+  locale,
 }: ApiCallParams) => {
   try {
     onResponseStreamStart?.();
@@ -44,6 +47,7 @@ export const makeApiCall = async ({
         prompt: searchQuery,
         context: additionalContext,
         previousC1Response,
+        locale,
       }),
     });
 
