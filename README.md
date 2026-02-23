@@ -1,4 +1,4 @@
-# Lingo Canvas: Multilingual Visual Collaboration
+# Lingo Canvas
 
 Lingo Canvas uses Lingo.dev as a structured localization layer for the deterministic parts of the application.
 
