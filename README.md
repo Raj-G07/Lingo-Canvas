@@ -93,6 +93,9 @@ Unlike traditional apps that translate static text, **Lingo Canvas** leverages A
 
 <img width="1318" height="635" alt="Screenshot 2026-02-23 133917" src="https://github.com/user-attachments/assets/eaede7c6-59f5-4dcf-84ab-ca6fec9f1632" />
 
+### Articles
+- [Building Lingo Canvas](https://lingo-canvas.hashnode.dev/building-lingo-canvas)
+
 ### Development
 
 Run the development server:
