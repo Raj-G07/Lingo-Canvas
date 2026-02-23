@@ -96,6 +96,8 @@ Unlike traditional apps that translate static text, **Lingo Canvas** leverages A
 ### Articles
 - [Building Lingo Canvas](https://lingo-canvas.hashnode.dev/building-lingo-canvas)
 
+### Demo Video 
+- [Lingo Canvas Demo](https://youtu.be/kC5-AU_Z7-A)
 ### Development
 
 Run the development server:
