@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BaseBoxShapeUtil, HTMLContainer, type TLResizeInfo } from "tldraw";
 import type { C1ComponentShape } from "../shapes/C1ComponentShape";
 import { ResizableContainer } from "../components/ResizableContainer";
 import { C1Component, ThemeProvider } from "@thesysai/genui-sdk";
 import { AiIcon } from "../components/AiIcon";
 import { useLocale } from "@/app/context/LocaleContext";
-import { SUPPORTED_LOCALES } from "@/app/utils/translate";
 import { MetricCard, ComparisonCard, ProfileCard } from "../components/VisualCards";
 import clsx from "clsx";
 
 // A React component wrapper to make the tldraw custom shape reactive to context changes
 const LocalizedC1Component = ({ shape, themeMode }: { shape: C1ComponentShape, themeMode: "light" | "dark" }) => {
-  const { locale, t } = useLocale();
+  const { t } = useLocale();
 
   const promptToRender = shape.props.prompt || "";
   const responseToRender = shape.props.c1Response || "";

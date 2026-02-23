@@ -17,8 +17,9 @@ export async function POST(req: NextRequest) {
         const text = await lingo.localizeText(key, { sourceLocale: "en", targetLocale: locale });
         console.log(`Lingotext: ${text}`);
         return NextResponse.json({ text });
-    } catch (e: any) {
+    } catch (e) {
         console.error("Lingo API Route Translation Error:", e);
-        return NextResponse.json({ error: e.message || "Translation failed" }, { status: 500 });
+        const errorMessage = e instanceof Error ? e.message : "Translation failed";
+        return NextResponse.json({ error: errorMessage }, { status: 500 });
     }
 }

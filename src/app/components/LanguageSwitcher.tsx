@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { useLocale } from "@/app/context/LocaleContext";
-import { SUPPORTED_LOCALES, type Locale } from "@/app/utils/translate";
+import { type Locale } from "@/app/utils/translate";
 
 export function LanguageSwitcher() {
     const { locale, setLocale, t, supportedLocales } = useLocale();
